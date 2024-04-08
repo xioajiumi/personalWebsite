@@ -1,0 +1,65 @@
+body{
+  /* remove white margin space */
+  margin: 0px 0px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.bg-container{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.bg{
+  background: url(./img/IC434-LRGBH.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  transition: all 0.2s;
+  transform: rotateX('0deg');
+  transform: rotateY('0deg');
+  top: -20%;
+  left: -20%;
+  height: 150%;
+  width: 150%;
+  position: absolute;
+  background-attachment: fixed;
+
+}
+.page-root{
+  width: 100dvw;
+  height: 100dvh;
+  max-width: 1280px;
+  background-color: pink;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+
+}
+.container{
+  display: flex;
+  background-color: rgba(50, 50, 50, 0.5);
+  height: 95vh;
+  max-width: 1280px;
+
+
+}
+.profile-conctainer{
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  opacity: 0.5;
+
+}
+.showcase-container{
+  background-color: blue;
+  height: 600px;
+  width: 200px;
+  opacity: 0.3;
+}
