@@ -1,68 +1,81 @@
-body{
+body {
   /* remove white margin space */
   margin: 0px 0px;
   height: 100%;
   width: 100%;
   position: relative;
+  color: white;
 }
-.bg-container{
+.bg-container {
   position: absolute;
-  top: 0%;
-  left: 0%;
   height: 100%;
   width: 100%;
   z-index: -1;
   overflow: hidden;
 }
-.bg{
-  /* background: url(./img/IC434-LRGBH.jpg); */
-  background: url(./img/clip.jpg);
+.bg {
+  background: url(./img/bg.jpg);
   background-size: cover;
   background-attachment: fixed;
+  position: absolute;
   transition: all 0.1s;
-  transform: rotateX('0deg');
-  transform: rotateY('0deg');
+  /* prevent white gap when rotate */
   top: -10%;
   left: -10%;
   height: 120%;
   width: 120%;
-  position: absolute;
-  background-attachment: fixed;
-
 }
-.page-root{
+.blur {
+  filter: blur(5px);
+}
+#app {
   width: 100dvw;
   height: 100dvh;
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; 
-  background-color: blueviolet;
-  padding: 0px 50px;
+  overflow: hidden;
 }
-.container{
+.container {
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
   display: flex;
-  background-color: rgba(50, 50, 50, 0.5);
-  border-radius: 8px;
-  height: 95vh;
-  max-width: 1280px;
+  position: relative;
   flex-direction: column;
-
+  overflow: hidden;
 }
-.profile-conctainer{
-  background-color: red;
-  height: 200px;
-  width: 200px;
-  min-width: 600px;
-  opacity: 0.5;
-
+.bottom-layer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: rgba(155, 155, 155, 0.05);
+  backdrop-filter: blur(15px);
+  z-index: -1;
 }
-.showcase-container{
-  background-color: green;
-  height: 600px;
-  width: 200px;
-  opacity: 0.3;
+.profile {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: url("./img/me.jpg");
+  background-size: cover;
+}
+.content {
+  display: flex;
+}
+.show-case {
+  display: flex;
+  width: 400px;
+  height: 300px;
 }
