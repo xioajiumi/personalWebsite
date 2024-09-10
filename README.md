@@ -3,7 +3,6 @@ it's the soure code for my personnal website, welcome to visit it http://giantdr
 
 
 ----未来计划
-改进：鼠标离开后旋转不会平滑回弹
 
 改进：移动端lazy-loading
 
@@ -13,8 +12,10 @@ it's the soure code for my personnal website, welcome to visit it http://giantdr
 
 改进:移动端图悬浮缩放
 
-改进：优化性能
+改进：优化性能，尤其是网络传输
 
-改进移动端适配
+改进:移动端适配
 
+改进：文字浮空效果
 
+新增：开源鼠标跟踪

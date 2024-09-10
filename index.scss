@@ -83,7 +83,7 @@ a:active {
     margin: 0 auto;
     margin-top: 25px;
     width: 95%;
-    //重要-大屏幕给一个固定高度,使得展示图片可以缩放
+    //重要-大屏幕给一个固定高度,使得展示案例中的图片可以悬浮缩放
     @media (min-width: $small-screen) {
       height: 92vh;
     }
@@ -118,7 +118,6 @@ a:active {
         align-items: center;
         /* 发光效果 */
         box-shadow: 0 0 15px 5px $avatar-shadow-color;
-        // transition: box-shadow 0.3s ease-in-out; /* 平滑过渡效果 */
         transition: all 0.3s ease-in-out;
         filter: grayscale(0.3);
         &:hover {
@@ -136,6 +135,7 @@ a:active {
           }
         }
       }
+      //名字，兴趣和联系方式
       .detail {
         padding: 5px 15px;
         min-width: 300px;
@@ -166,11 +166,13 @@ a:active {
       flex-direction: column;
       align-items: center;
       text-align: center;
+      //废话
       .someWord {
         font-size: 20px;
         line-height: 30px;
         font-weight: bold;
       }
+      //此处处理展示案例，大屏横向，小屏竖向
       .caseContainer {
         height: 100%;
         height: calc(105% - 330px);
@@ -184,6 +186,7 @@ a:active {
         @media screen and (max-width: $small-screen) {
           flex-direction: column;
         }
+        //案例卡片
         .case {
           position: relative;
           min-height: 100px;
@@ -196,21 +199,17 @@ a:active {
           background-size: cover;
           background-repeat: no-repeat;
           filter: grayscale(1);
-          // transition-property: width, height, top;
-          // transition-duration: 0.5s;
-          // transition-timing-function: ease-in-out;
-          // transition: filter .5s ease-in-out;
           transition: all 0.5s ease-out; //all in one
-
+          //展示标题
           .title {
             font-weight: bold;
             position: relative;
             top: calc(50% - 0.75em);
             transition: all 0.5s ease-out; //all in one
           }
+          //动画卡片
           .infoCard {
             width: 100%;
-            background-color: aqua;
             height: 6em;
             position: absolute;
             font-size: 20px;
@@ -221,9 +220,11 @@ a:active {
             backdrop-filter: blur(20px);
             transition: all 0.5s ease-out; //all in one
             text-shadow: 3px 3px 3px black;
+            //简单介绍
             .info {
               margin: 1em auto;
             }
+            // 按钮
             .moreBtn {
               display: inline-block;
               margin-top: 15px;
@@ -235,6 +236,7 @@ a:active {
               transform: translateX(-50%);
             }
           }
+          //在横向时是宽高都放大，纵向排列由于高度不定，所以不能长高。dani的解决方案是绝对定位
           &:hover {
             width: 50%;
             height: calc(80% + 2rem);
@@ -248,6 +250,7 @@ a:active {
             }
           }
         }
+        //小屏适配
         @media screen and (max-width: $small-screen) {
           .case {
             min-height: 300px;
@@ -264,6 +267,7 @@ a:active {
             }
           }
         }
+        //展示图片src
         .moon {
           background-image: url(img/moon.jpg);
         }

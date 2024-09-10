@@ -180,7 +180,6 @@ a:active {
 }
 .container .main .show .caseContainer .case .infoCard {
   width: 100%;
-  background-color: aqua;
   height: 6em;
   position: absolute;
   font-size: 20px;
