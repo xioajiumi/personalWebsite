@@ -2,67 +2,106 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
+    <title>巨龙的秘密基地</title>
+    <meta
+      property="description"
+      content="这是我的个人网站，可能对你没帮助哈哈哈"
+    />
+
+    <meta property="og:url" content="https://giantdragon.xyz/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="龙的秘密基地" />
+    <meta
+      property="og:description"
+      content="这是我的个人网站，可能对你没帮助哈哈哈"
+    />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="stylesheet" href="index.css" />
-    <title>个人练习站点</title>
   </head>
   <body>
-    <div class="bg-container">
-      <div class="bg" id="cursor-follower"></div>
+    <!-- This website is similar to Dani's which I learned a lot. -->
+    <!-- Thanks to Dani！ https://www.rocksdanister.com/ access date 2024/9/9-->
+    <!-- 大背景 -->
+    <div class="bg">
+      <div id="background-holder" class="backgroundCosmic"></div>
     </div>
-    <!-- 实际内容区 -->
-    <div id="app">
-      <!-- 版心 -->
-      <div class="container">
-        <!-- 版心高斯模糊图层 -->
-        <div class="bottom-layer"></div>
+    <!-- 网站内容开始 -->
+    <div class="container clearfix">
+      <!-- 主体内容 -->
+      <div class="main" id="cursor-follower">
         <!-- 个人资料 -->
         <div class="profile">
-          <div class="profile-img"></div>
-          <div class="profile-text">
-            <!-- 名字 -->
-            <div class="name">
-              <h1>Julong Ge</h1>
+          <!-- 头像 -->
+          <div class="avatar">
+            <img
+              src="https://avatars.githubusercontent.com/u/62926886"
+              alt="我的图片"
+            />
+          </div>
+          <!-- 文字信息区-便于响应式 -->
+          <div class="detail">
+            <div class="name">De·Dragon·龙</div>
+            <div class="intro">
+              研究生在读，喜欢读书\看电影\听音乐\编程\音响
             </div>
-            <div class="introduction">238712687362173</div>
-            <div class="introduction">
-              个人练习站点</div>
-            <!-- 联系方式 -->
             <div class="contact">
-              <a href="mailto:hahagjl@163.com" target="_blank"> mailto:hahagjl@163.com </a>
-              <div></div>
+              <div class="mail clickable">
+                <img src="./img/mail.svg" />
+                <a href="mailto:hahagjl@163.com" target="_blank">
+                  hahagjl@163.com</a
+                >
+              </div>
             </div>
           </div>
         </div>
-        <!-- 内容展示 -->
-        <div class="content">
-          <div class="show-case">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
-            neque libero provident tempora error. Nobis neque vel magni
-            provident quam consequuntur possimus corrupti, eligendi illum
-            delectus perferendis totam, sunt eius?
+        <!-- 展示区域 -->
+        <div class="show">
+          <div class="someWord">
+            你好! 俺是焦恩俊<br />这个网页其实没有太多信息😀
           </div>
-          <div class="show-case">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
-            neque libero provident tempora error. Nobis neque vel magni
-            provident quam consequuntur possimus corrupti, eligendi illum
-            delectus perferendis totam, sunt eius?
-          </div>
-          <div class="show-case">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
-            neque libero provident tempora error. Nobis neque vel magni
-            provident quam consequuntur possimus corrupti, eligendi illum
-            delectus perferendis totam, sunt eius?
+          <!-- 案例区域 -->
+          <div class="caseContainer">
+            <div class="case moon">
+              <div class="title">天文鸡</div>
+              <div class="infoCard">
+                <div class="info">略懂双筒/观鸟/天文望远镜,如今已经退坑……</div>
+                <div class="moreBtn clickable"><a href="https://www.bggd.com/bbs/forum.php?mod=viewthread&tid=465521" target="_blank">我的镜子</a></div>
+              </div>
+            </div>
+
+            <div class="case sea">
+              <div class="title">面向大海</div>
+              <div class="infoCard">
+                <div class="info">
+                  清澈蔚蓝的大海看着就心旷神怡，可惜厦门的海远不如青岛
+                </div>
+                <!-- <div class="moreBtn clickable">----</div> -->
+              </div>
+            </div>
+            <div class="case cloud">
+              <div class="title">大城市</div>
+              <div class="infoCard">
+                <div class="info">
+                  更大城市意味着更多的机遇，以后想在一线城市定居，比如上海
+                </div>
+                <!-- <div class="moreBtn clickable">----</div> -->
+              </div>
+            </div>
           </div>
         </div>
-        <a href="https://beian.miit.gov.cn/" target="_blank">备案号</a>
-        <a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2024063806号-1
-        </a>
       </div>
-
+      <!-- 备案-隐藏 -->
+      <div class="beian">
+        <a href="https://beian.miit.gov.cn/" target="_blank">备案号</a>
+        <a href="https://beian.miit.gov.cn/" target="_blank"
+          >豫ICP备2024063806号-1</a
+        >
+      </div>
     </div>
-
-    <script src="index.js"></script>
   </body>
+
+  <!-- 动画线条js -->
+  <script src="animatedLines.js"></script>
+  <!-- 鼠标摇摆js -->
+  <script src="index.js"></script>
 </html>

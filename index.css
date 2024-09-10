@@ -1,108 +1,250 @@
+@charset "UTF-8";
 body {
-  /* remove white margin space */
-  margin: 0px 0px;
-  height: 100%;
-  width: 100%;
+  margin: 0px;
+  padding: 0px;
   position: relative;
-  color: white;
 }
-.bg-container {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clickable {
+  cursor: pointer;
+}
+.clickable:hover {
+  background-color: rgba(154, 160, 229, 0.506);
+}
+
+.clearfix {
   overflow: hidden;
 }
+
 .bg {
-  background: url(./img/bg.jpg);
-  background-size: cover;
-  background-attachment: fixed;
+  position: sticky;
+  left: 0;
+  top: 0;
+}
+.bg .backgroundCosmic {
   position: absolute;
-  transition: 0.5s;
-  /* prevent white gap when rotate */
-  top: -10%;
-  left: -10%;
-  height: 120%;
-  width: 120%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(ellipse at 500% 0%, rgb(8, 2, 49) 50%, rgb(27, 100, 120) 80%, rgb(63, 16, 130) 100%);
 }
-.blur {
-  filter: blur(5px);
+
+.container {
+  color: white;
 }
-#app {
-  width: 100dvw;
-  height: 100dvh;
+.container ::-moz-selection {
+  background-color: rgba(154, 160, 229, 0.506);
+}
+.container ::selection {
+  background-color: rgba(154, 160, 229, 0.506);
+}
+.container div,
+.container img {
+  border-radius: 10px;
+}
+.container .main {
+  overflow: visible;
   margin: 0 auto;
-  text-align: center;
+  margin-top: 25px;
+  width: 95%;
+  border-radius: 10px;
+  background: rgba(44, 44, 49, 0.246);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+@media (min-width: 900px) {
+  .container .main {
+    height: 92vh;
+  }
+}
+.container .main .profile {
+  background-color: rgb(0, 0, 0);
+  padding: 20px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .container .main .profile {
+    flex-direction: column;
+  }
+  .container .main .profile .detail {
+    align-items: center;
+  }
+}
+.container .main .profile .avatar {
+  margin-right: 20px;
+  height: 156px;
+  width: 156px;
+  border-radius: 78px;
+  background-color: rgba(154, 160, 229, 0.506);
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* 发光效果 */
+  box-shadow: 0 0 15px 5px rgba(154, 160, 229, 0.506);
+  transition: all 0.3s ease-in-out;
+  filter: grayscale(0.3);
 }
-.container {
-  width: 90%;
-  height: 90%;
-  border-radius: 15px;
+.container .main .profile .avatar:hover {
+  /* 悬停时更强的发光效果 */
+  box-shadow: 0 0 30px 10px rgba(118, 127, 230, 0.877);
+  filter: grayscale(0);
+}
+.container .main .profile .avatar img {
+  border-radius: 75px;
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease; /* 平滑的缩放过渡效果 */
+}
+.container .main .profile .avatar img:hover {
+  transform: scale(1.1);
+}
+.container .main .profile .detail {
+  padding: 5px 15px;
+  min-width: 300px;
+  height: 120px;
   display: flex;
-  position: relative;
   flex-direction: column;
-  overflow: hidden;
+  justify-content: space-between;
 }
-.bottom-layer {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.container .main .profile .detail .name {
+  font-size: 40px;
+  font-weight: bold;
+}
+.container .main .profile .detail .intro {
+  font-size: 20px;
+}
+.container .main .profile .detail .contact .mail {
+  display: flex;
+  align-items: center;
+}
+.container .main .show {
   height: 100%;
-  width: 100%;
-  background: rgba(155, 155, 155, 0.05);
-  backdrop-filter: blur(15px);
-  z-index: -1;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.profile {
+.container .main .show .someWord {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.container .main .show .caseContainer {
+  height: 100%;
+  height: calc(105% - 330px);
+  width: 95%;
+  margin-top: 0px;
   display: flex;
   flex-direction: row;
-  background-color: black;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 3rem 5rem;
 }
-
-@media screen and (max-width: 768px) {
-
+@media (max-width: 900px) {
+  .container .main .show .caseContainer {
+    flex-direction: column;
+  }
 }
-.profile-img {
-  width: 110px;
-  height: 110px;
-  border-radius: 30px;
+.container .main .show .caseContainer .case {
+  position: relative;
+  min-height: 100px;
+  font-size: 50px;
+  width: 40%;
+  height: 80%;
+  margin: 8px;
   overflow: hidden;
-  background: url("./img/me.jpg");
   background-size: cover;
-  flex-grow: 0;
-  flex-shrink: 0;
+  background-repeat: no-repeat;
+  filter: grayscale(1);
+  transition: all 0.5s ease-out;
 }
-.profile-text {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-left: 2rem;
+.container .main .show .caseContainer .case .title {
+  font-weight: bold;
+  position: relative;
+  top: calc(50% - 0.75em);
+  transition: all 0.5s ease-out;
 }
-
-.content {
-  display: flex;
-  align-items: center;
+.container .main .show .caseContainer .case .infoCard {
+  width: 100%;
+  background-color: aqua;
+  height: 6em;
+  position: absolute;
+  font-size: 20px;
+  box-sizing: border-box;
+  bottom: -100%;
+  background: rgba(44, 44, 49, 0.246);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  transition: all 0.5s ease-out;
+  text-shadow: 3px 3px 3px black;
 }
-@media screen and (max-width: 768px) {
-  .profile {
-    flex-direction: column;
+.container .main .show .caseContainer .case .infoCard .info {
+  margin: 1em auto;
+}
+.container .main .show .caseContainer .case .infoCard .moreBtn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 0px 10px;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  color: rgba(175, 233, 249, 0.983);
+  transform: translateX(-50%);
+}
+.container .main .show .caseContainer .case:hover {
+  width: 50%;
+  height: calc(80% + 2rem);
+  filter: grayscale(0);
+}
+.container .main .show .caseContainer .case:hover .title {
+  top: 10%;
+  text-shadow: 3px 3px 3px black;
+}
+.container .main .show .caseContainer .case:hover .infoCard {
+  bottom: 0px;
+}
+@media (max-width: 900px) {
+  .container .main .show .caseContainer .case {
+    min-height: 300px;
+    width: 80%;
   }
-  .profile-text {
-    align-items: center;
+  .container .main .show .caseContainer .case .title {
+    top: 2.5em;
   }
-  .content {
-    flex-direction: column;
+  .container .main .show .caseContainer .case:hover {
+    width: 90%;
+    height: 100%;
   }
-
+  .container .main .show .caseContainer .case:hover .title {
+    top: 1em;
+  }
 }
-.show-case {
-  display: flex;
-  width: 400px;
+.container .main .show .caseContainer .moon {
+  background-image: url(img/moon.jpg);
 }
+.container .main .show .caseContainer .sea {
+  background-image: url(img/sea.jpg);
+}
+.container .main .show .caseContainer .cloud {
+  background-image: url(img/cloud.jpg);
+}
+.container .beian {
+  width: 1px;
+  height: 1px;
+  height: 1px;
+  visibility: hidden;
+  overflow: hidden;
+}/*# sourceMappingURL=index.css.map */

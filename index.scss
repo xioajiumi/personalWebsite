@@ -1,0 +1,289 @@
+// 颜色从右上到左下
+$bg-color-1: rgb(8, 2, 49);
+$bg-color-2: rgb(27, 100, 120);
+$bg-color-3: rgb(63, 16, 130);
+$radius-angle: 10px; //统一圆角
+$avatar-img-size: 150px; //头像尺寸
+$avatar-img-halo: 3px; //头像光晕尺寸
+$avatar-shadow-color: rgba(154, 160, 229, 0.506); //光晕颜色
+$avatar-shadow-color-hover: rgba(118, 127, 230, 0.877); //光晕悬浮色
+$btnColor: rgba(175, 233, 249, 0.983); //按钮颜色
+$text-color: white; //统一字色
+$small-screen: 900px; //小屏幕划定标准
+
+//开始清除默认
+body {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+//去除a标签所有默认样式
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+//清除默认结束
+//开始公用样式
+//看起来好像可以点击，阴影提示
+.clickable {
+  cursor: pointer;
+  &:hover {
+    background-color: $avatar-shadow-color;
+  }
+}
+//解决盒子坍塌
+.clearfix {
+  overflow: hidden;
+}
+
+//公用样式结束
+
+//全局大背景
+.bg {
+  //解决滚动露馅
+  position: sticky;
+  left: 0;
+  top: 0;
+  //动画线条的背景板-三色渐变
+  .backgroundCosmic {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: radial-gradient(
+      ellipse at 500% 0%,
+      $bg-color-1 50%,
+      $bg-color-2 80%,
+      $bg-color-3 100%
+    );
+  }
+}
+
+// 内容容器
+.container {
+  //字体设置
+  color: $text-color;
+  // 修改选中颜色
+  ::selection {
+    background-color: $avatar-shadow-color;
+  }
+  div,
+  img {
+    border-radius: $radius-angle;
+  }
+  // 主要内容区
+  .main {
+    overflow: visible;
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 95%;
+    //重要-给一个固定高度,使得展示图片可以缩放
+    @media (min-width: $small-screen) {
+      height: 92vh;
+    }
+    border-radius: $radius-angle;
+    // 高斯模糊
+    background: rgba(44, 44, 49, 0.246);
+    backdrop-filter: blur(20px);
+    //大黑色个人资料面板
+    .profile {
+      background-color: rgba(0, 0, 0, 1);
+      padding: 20px 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      // 小品屏幕适配
+      @media (max-width: $small-screen) {
+        flex-direction: column;
+        .detail {
+          align-items: center;
+        }
+      }
+      //头像
+      .avatar {
+        margin-right: 20px;
+        height: calc($avatar-img-size + 2 * ($avatar-img-halo));
+        width: calc($avatar-img-size + 2 * ($avatar-img-halo));
+        border-radius: calc(($avatar-img-size / 2) + $avatar-img-halo);
+        background-color: $avatar-shadow-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* 发光效果 */
+        box-shadow: 0 0 15px 5px $avatar-shadow-color;
+        // transition: box-shadow 0.3s ease-in-out; /* 平滑过渡效果 */
+        transition: all 0.3s ease-in-out;
+        filter: grayscale(0.3);
+        &:hover {
+          /* 悬停时更强的发光效果 */
+          box-shadow: 0 0 30px 10px $avatar-shadow-color-hover;
+          filter: grayscale(0);
+        }
+        img {
+          border-radius: calc($avatar-img-size / 2);
+          width: calc($avatar-img-size);
+          height: calc($avatar-img-size);
+          transition: transform 0.3s ease; /* 平滑的缩放过渡效果 */
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+      .detail {
+        padding: 5px 15px;
+        min-width: 300px;
+        height: calc($avatar-img-size - 30px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .name {
+          font-size: 40px;
+          font-weight: bold;
+        }
+        .intro {
+          font-size: 20px;
+        }
+        .contact {
+          .mail {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+    //展示面板
+    .show {
+      height: 100%;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      .someWord {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: bold;
+      }
+      .caseContainer {
+        height: 100%;
+        height: calc(105% - 330px);
+        width: 95%;
+        margin-top: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $small-screen) {
+          flex-direction: column;
+        }
+        .case {
+          position: relative;
+          min-height: 100px;
+          font-size: 50px;
+          width: 40%;
+          height: 80%;
+          margin: 8px;
+          overflow: hidden;
+          //pic
+          background-size: cover;
+          background-repeat: no-repeat;
+          filter: grayscale(1);
+          // transition-property: width, height, top;
+          // transition-duration: 0.5s;
+          // transition-timing-function: ease-in-out;
+          // transition: filter .5s ease-in-out;
+          transition: all 0.5s ease-out; //all in one
+
+          .title {
+            font-weight: bold;
+            position: relative;
+            top: calc(50% - 0.75em);
+            transition: all 0.5s ease-out; //all in one
+          }
+          .infoCard {
+            width: 100%;
+            background-color: aqua;
+            height: 6em;
+            position: absolute;
+            font-size: 20px;
+            box-sizing: border-box;
+            bottom: -100%;
+            // 高斯模糊
+            background: rgba(44, 44, 49, 0.246);
+            backdrop-filter: blur(20px);
+            transition: all 0.5s ease-out; //all in one
+            text-shadow: 3px 3px 3px black;
+            .info {
+              margin: 1em auto;
+            }
+            .moreBtn {
+              display: inline-block;
+              margin-top: 15px;
+              padding: 0px 10px;
+              position: absolute;
+              bottom: 1em;
+              left: 50%;
+              color: $btnColor;
+              transform: translateX(-50%);
+            }
+          }
+          &:hover {
+            width: 50%;
+            height: calc(80% + 2rem);
+            filter: grayscale(0);
+            .title {
+              top: 10%;
+              text-shadow: 3px 3px 3px black;
+            }
+            .infoCard {
+              bottom: 0px;
+            }
+          }
+        }
+        @media (max-width: $small-screen) {
+          .case {
+            min-height: 300px;
+            width: 80%;
+            .title{
+              top:2.5em;
+
+            }
+            &:hover {
+              width: 90%;
+              height: 100%;
+              .title{
+                top:1em;
+  
+              }
+
+            }
+          }
+        }
+        .moon {
+          background-image: url(img/moon.jpg);
+        }
+        .sea {
+          background-image: url(img/sea.jpg);
+        }
+        .cloud {
+          background-image: url(img/cloud.jpg);
+        }
+      }
+    }
+  }
+  // 隐藏备案
+  .beian {
+    width: 1px;
+    height: 1px;
+    height: 1px;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}
