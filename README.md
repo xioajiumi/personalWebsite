@@ -13,4 +13,8 @@ it's the soure code for my personnal website, welcome to visit it http://giantdr
 
 改进:移动端图悬浮缩放
 
+改进：优化性能
+
+改进移动端适配
+
 

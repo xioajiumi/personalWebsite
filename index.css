@@ -75,12 +75,13 @@ a:active {
   flex-wrap: wrap;
   align-items: center;
 }
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .container .main .profile {
     flex-direction: column;
   }
   .container .main .profile .detail {
     align-items: center;
+    text-align: center;
   }
 }
 .container .main .profile .avatar {
@@ -153,7 +154,7 @@ a:active {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .container .main .show .caseContainer {
     flex-direction: column;
   }
@@ -216,7 +217,7 @@ a:active {
 .container .main .show .caseContainer .case:hover .infoCard {
   bottom: 0px;
 }
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .container .main .show .caseContainer .case {
     min-height: 300px;
     width: 80%;

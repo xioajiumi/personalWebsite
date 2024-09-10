@@ -83,7 +83,7 @@ a:active {
     margin: 0 auto;
     margin-top: 25px;
     width: 95%;
-    //重要-给一个固定高度,使得展示图片可以缩放
+    //重要-大屏幕给一个固定高度,使得展示图片可以缩放
     @media (min-width: $small-screen) {
       height: 92vh;
     }
@@ -98,11 +98,12 @@ a:active {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      // 小品屏幕适配
-      @media (max-width: $small-screen) {
+      // 小屏幕适配
+      @media screen and (max-width: $small-screen) {
         flex-direction: column;
         .detail {
           align-items: center;
+          text-align: center;
         }
       }
       //头像
@@ -180,7 +181,7 @@ a:active {
         justify-content: space-between;
         align-items: center;
 
-        @media (max-width: $small-screen) {
+        @media screen and (max-width: $small-screen) {
           flex-direction: column;
         }
         .case {
@@ -247,22 +248,19 @@ a:active {
             }
           }
         }
-        @media (max-width: $small-screen) {
+        @media screen and (max-width: $small-screen) {
           .case {
             min-height: 300px;
             width: 80%;
-            .title{
-              top:2.5em;
-
+            .title {
+              top: 2.5em;
             }
             &:hover {
               width: 90%;
               height: 100%;
-              .title{
-                top:1em;
-  
+              .title {
+                top: 1em;
               }
-
             }
           }
         }
