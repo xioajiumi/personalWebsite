@@ -65,7 +65,7 @@ a:active {
 }
 @media (min-width: 900px) {
   .container .main {
-    height: 92vh;
+    height: 91vh;
   }
 }
 .container .main .profile {
@@ -130,6 +130,9 @@ a:active {
 .container .main .profile .detail .contact .mail {
   display: flex;
   align-items: center;
+}
+.container .main .profile .detail .contact .mail img {
+  content: url("../img/mail.svg");
 }
 .container .main .show {
   height: 100%;
@@ -233,13 +236,13 @@ a:active {
   }
 }
 .container .main .show .caseContainer .moon {
-  background-image: url(img/moon.jpg);
+  background-image: url(../img/moon.jpg);
 }
 .container .main .show .caseContainer .sea {
-  background-image: url(img/sea.jpg);
+  background-image: url(../img/sea.jpg);
 }
 .container .main .show .caseContainer .cloud {
-  background-image: url(img/cloud.jpg);
+  background-image: url(../img/cloud.jpg);
 }
 .container .beian {
   width: 1px;

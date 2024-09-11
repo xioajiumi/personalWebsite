@@ -1,3 +1,6 @@
+//引入CSS
+import '../css/index.css'
+
 //console输出的话
 const consoleGreets=[
   "既然你都打开了开发者工具，想必也是懂的",

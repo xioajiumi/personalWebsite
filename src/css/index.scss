@@ -85,7 +85,7 @@ a:active {
     width: 95%;
     //重要-大屏幕给一个固定高度,使得展示案例中的图片可以悬浮缩放
     @media (min-width: $small-screen) {
-      height: 92vh;
+      height: 91vh;
     }
     border-radius: $radius-angle;
     // 高斯模糊
@@ -154,6 +154,10 @@ a:active {
           .mail {
             display: flex;
             align-items: center;
+            //webpack打包这个不方便，所以写在css中
+            img{
+              content: url("../img/mail.svg" );
+            }
           }
         }
       }
@@ -269,13 +273,13 @@ a:active {
         }
         //展示图片src
         .moon {
-          background-image: url(img/moon.jpg);
+          background-image: url(../img/moon.jpg);
         }
         .sea {
-          background-image: url(img/sea.jpg);
+          background-image: url(../img/sea.jpg);
         }
         .cloud {
-          background-image: url(img/cloud.jpg);
+          background-image: url(../img/cloud.jpg);
         }
       }
     }
