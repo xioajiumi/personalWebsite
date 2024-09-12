@@ -12,7 +12,7 @@ it's the soure code for my personnal website, welcome to visit it http://giantdr
 
 改进:移动端图悬浮缩放
 
-改进：优化性能，尤其是网络传输gzip和webp,解决所有控制台和请求报错
+改进：优化性能，尤其是网络传输gzip和webp
 
 改进:移动端适配
 

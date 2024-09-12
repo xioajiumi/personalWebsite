@@ -64,8 +64,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/view/index.html",
-      favicon: "./src/img/favicon-16x16.png",
-      // chunk: ["index", "cursorFollower", "animatedLines"],
+      favicon: "./src/img/favicon-16x16.webp",
       chunk: ["index"],
       filename: "index.html",
       inject: "body",
