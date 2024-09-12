@@ -3,12 +3,17 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const path = require("path");
+const { watchFile } = require("fs");
 module.exports = {
   // 2. 配置JS入口(多入口)
   entry: {
-    index: "./src/js/index.js",
-    cursorFollower: "./src/js/cursorFollower.js",
-    animatedLines: "./src/js/animatedLines.js",
+    index: {
+      import: [
+        "./src/js/index.js",
+        "./src/js/cursorFollower.js",
+        "./src/js/animatedLines.js",
+      ],
+    },
   },
 
   output: {
@@ -60,8 +65,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/view/index.html",
       favicon: "./src/img/favicon-16x16.png",
-      chunk: ["index", "cursorFollower", "animatedLines"],
+      // chunk: ["index", "cursorFollower", "animatedLines"],
+      chunk: ["index"],
       filename: "index.html",
+      inject: "body",
       // 通过minify属性可以压缩html文件
       minify: {
         // 移除空格
@@ -76,5 +83,6 @@ module.exports = {
     host: "localhost", // 启动服务器域名
     port: "8888", // 启动服务器端口号
     open: true, // 是否自动打开浏览器
+    watchFiles: ["./src/view/index.html"],
   },
 };

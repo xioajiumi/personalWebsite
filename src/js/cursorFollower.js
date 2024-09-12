@@ -48,7 +48,7 @@ function startFollow(el) {
   });
 }
 // 对外暴露主函数
-function followElementById(elId, args) {
+export function followElementById(elId, args) {
   const el = document.getElementById(elId);
   startFollow(el);
   handleEnter(el);
