@@ -2,7 +2,7 @@
 $bg-color-1: rgb(8, 2, 49);
 $bg-color-2: rgb(27, 100, 120);
 $bg-color-3: rgb(63, 16, 130);
-$theme-color:rgba(154, 160, 229, 0.506); //主题色，影响很多
+$theme-color: rgba(154, 160, 229, 0.506); //主题色，影响很多
 $radius-angle: 10px; //统一圆角
 $avatar-img-size: 150px; //头像尺寸
 $avatar-img-halo: 3px; //头像光晕尺寸
@@ -29,20 +29,20 @@ a:active {
 }
 //清除默认结束
 //开始公用样式
-@mixin myScrollBar{
-  scrollbar-color:$bg-color-1 $theme-color;
+@mixin myScrollBar {
+  scrollbar-color: $bg-color-1 $theme-color;
   scrollbar-width: thin;
 }
 
 //混入滚动条样式
-html{
-  @include  myScrollBar;
+html {
+  @include myScrollBar;
 }
 //看起来好像可以点击，阴影提示
 .clickable {
   cursor: pointer;
   &:hover {
-    background-color: $theme-color ;
+    background-color: $theme-color;
   }
 }
 //解决盒子坍塌
@@ -101,6 +101,7 @@ html{
     // 高斯模糊
     background: rgba(44, 44, 49, 0.246);
     backdrop-filter: blur(20px);
+
     //大黑色个人资料面板
     .profile {
       background-color: rgba(0, 0, 0, 1);
@@ -108,6 +109,7 @@ html{
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      position: relative;
       // 小屏幕适配
       @media screen and (max-width: $small-screen) {
         flex-direction: column;
@@ -116,6 +118,7 @@ html{
           text-align: center;
         }
       }
+
       //头像
       .avatar {
         margin-right: 20px;
@@ -136,6 +139,7 @@ html{
           filter: grayscale(0);
         }
         img {
+          content: url("https://avatars.githubusercontent.com/u/62926886");
           border-radius: calc($avatar-img-size / 2);
           width: calc($avatar-img-size);
           height: calc($avatar-img-size);
@@ -165,8 +169,8 @@ html{
             display: flex;
             align-items: center;
             //webpack打包这个不方便，所以写在css中
-            img{
-              content: url("../img/mail.svg" );
+            img {
+              content: url("../img/mail.svg");
             }
           }
         }
@@ -209,16 +213,14 @@ html{
           height: 80%;
           margin: 8px;
           overflow: hidden;
-          
 
           filter: grayscale(1);
           transition: all 0.5s ease-out; //all in one
 
-
           //pic
           background-size: cover;
           background-repeat: no-repeat;
-          img{
+          img {
             position: absolute;
             top: 0;
             left: 0;
@@ -296,21 +298,18 @@ html{
         }
         //展示图片src
         .moon {
-          img{
+          img {
             content: url(../img/moon.webp);
-
           }
         }
         .sea {
-          img{
+          img {
             content: url(../img/sea.webp);
-
           }
         }
         .cloud {
-          img{
+          img {
             content: url(../img/cloud.webp);
-
           }
         }
       }

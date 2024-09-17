@@ -79,6 +79,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  position: relative;
 }
 @media screen and (max-width: 900px) {
   .container .main .profile {
@@ -109,6 +110,7 @@ html {
   filter: grayscale(0);
 }
 .container .main .profile .avatar img {
+  content: url("https://avatars.githubusercontent.com/u/62926886");
   border-radius: 75px;
   width: 150px;
   height: 150px;
