@@ -179,15 +179,9 @@ html {
   overflow: hidden;
   filter: grayscale(1);
   transition: all 0.5s ease-out;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.container .main .show .caseContainer .case img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% 50% !important;
 }
 .container .main .show .caseContainer .case .title {
   font-weight: bold;
@@ -249,14 +243,14 @@ html {
     top: 1em;
   }
 }
-.container .main .show .caseContainer .moon img {
-  content: url(../img/moon.webp);
+.container .main .show .caseContainer .moon {
+  background: url(../img/moon.webp);
 }
-.container .main .show .caseContainer .sea img {
-  content: url(../img/sea.webp);
+.container .main .show .caseContainer .sea {
+  background: url(../img/sea.webp);
 }
-.container .main .show .caseContainer .cloud img {
-  content: url(../img/cloud.webp);
+.container .main .show .caseContainer .cloud {
+  background: url(../img/cloud.webp);
 }
 .container .beian {
   width: 1px;

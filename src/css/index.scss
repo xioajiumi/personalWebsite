@@ -218,16 +218,17 @@ html {
           transition: all 0.5s ease-out; //all in one
 
           //pic
-          background-size: cover;
-          background-repeat: no-repeat;
-          img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            width: 100%;
-            // height: 100%;
-          }
+          background-size: cover !important;
+          background-repeat: no-repeat !important;
+          background-position: 50% 50% !important;
+          // img {
+          //   position: absolute;
+          //   top: 0;
+          //   left: 0;
+          //   z-index: -1;
+          //   width: 100%;
+          //   height: 100%;
+          // }
 
           //展示标题
           .title {
@@ -298,19 +299,22 @@ html {
         }
         //展示图片src
         .moon {
-          img {
-            content: url(../img/moon.webp);
-          }
+          background: url(../img/moon.webp);
+          // img {
+          //   content: url(../img/moon.webp);
+          // }
         }
         .sea {
-          img {
-            content: url(../img/sea.webp);
-          }
+          background: url(../img/sea.webp);
+          // img {
+          //   content: url(../img/sea.webp);
+          // }
         }
         .cloud {
-          img {
-            content: url(../img/cloud.webp);
-          }
+          background: url(../img/cloud.webp);
+          // img {
+          //   content: url(../img/cloud.webp);
+          // }
         }
       }
     }
