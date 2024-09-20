@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const compressionWebpackPlugin = require('compression-webpack-plugin')
 
 const path = require("path");
 const { watchFile } = require("fs");
@@ -55,6 +56,16 @@ module.exports = {
     ],
   },
   plugins: [
+    //gzip压缩
+    new compressionWebpackPlugin({
+      filename: '[path].gz[query]', 
+      algorithm: 'gzip', 
+      test: /\.(html|js|css|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8, 
+      deleteOriginalAssets: false 
+    }),
+
     // css压缩
     new CssMinimizerPlugin(),
     // 提取css成单独文件
