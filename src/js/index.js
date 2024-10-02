@@ -1,4 +1,5 @@
 //引入CSS
+import "../css/reset.css";
 import "../css/index.css";
 
 // 引入js

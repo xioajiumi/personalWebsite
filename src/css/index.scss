@@ -43,6 +43,7 @@ html {
   cursor: pointer;
   &:hover {
     background-color: $theme-color;
+    border-radius:5px;
   }
 }
 //解决盒子坍塌
@@ -171,6 +172,7 @@ html {
             //webpack打包这个不方便，所以写在css中
             img {
               content: url("../img/mail.svg");
+              margin-right: 5px;
             }
           }
         }

@@ -24,6 +24,7 @@ html {
 }
 .clickable:hover {
   background-color: rgba(154, 160, 229, 0.506);
+  border-radius: 5px;
 }
 
 .clearfix {
@@ -140,6 +141,7 @@ html {
 }
 .container .main .profile .detail .contact .mail img {
   content: url("../img/mail.svg");
+  margin-right: 5px;
 }
 .container .main .show {
   height: 100%;
