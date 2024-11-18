@@ -97,6 +97,7 @@ html {
     //重要-大屏幕给一个固定高度,使得展示案例中的图片可以悬浮缩放
     @media (min-width: $small-screen) {
       height: 91vh;
+      width: 85%;
     }
     border-radius: $radius-angle;
     // 高斯模糊

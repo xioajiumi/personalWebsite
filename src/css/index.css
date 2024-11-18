@@ -72,6 +72,7 @@ html {
 @media (min-width: 900px) {
   .container .main {
     height: 91vh;
+    width: 85%;
   }
 }
 .container .main .profile {
