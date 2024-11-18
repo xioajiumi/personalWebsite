@@ -3,7 +3,6 @@ import "../css/reset.css";
 import "../css/index.css";
 
 // 引入js
-import "../js/animatedLines"; //动画线条
 import { followElementById } from "../js/cursorFollower"; //鼠标跟踪
 followElementById("cursor-follower");
 

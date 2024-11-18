@@ -1,20 +1,16 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const compressionWebpackPlugin = require('compression-webpack-plugin')
+const compressionWebpackPlugin = require("compression-webpack-plugin");
 
 const path = require("path");
 const { watchFile } = require("fs");
 module.exports = {
   // 2. 配置JS入口(多入口)
   entry: {
-    index: {
-      import: [
-        "./src/js/index.js",
-        "./src/js/cursorFollower.js",
-        "./src/js/animatedLines.js",
-      ],
-    },
+    index:"/src/js/index.js",
+    animation:"/src/js/animatedLines.js",
+    // cursorFollower:"./src/js/cursorFollower.js",
   },
 
   output: {
@@ -58,12 +54,13 @@ module.exports = {
   plugins: [
     //gzip压缩
     new compressionWebpackPlugin({
-      filename: '[path].gz[query]', 
-      algorithm: 'gzip', 
+      // filename: "[path].gz[query]",
+      filename: "[path][base].gz",
+      algorithm: "gzip",
       test: /\.(html|js|css|svg)$/,
       threshold: 10240,
-      minRatio: 0.8, 
-      deleteOriginalAssets: false 
+      minRatio: 0.8,
+      deleteOriginalAssets: false,
     }),
 
     // css压缩
@@ -76,7 +73,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/view/index.html",
       favicon: "./src/img/favicon-16x16.webp",
-      chunk: ["index"],
       filename: "index.html",
       inject: "body",
       // 通过minify属性可以压缩html文件
