@@ -2,9 +2,21 @@
 import "../css/reset.css";
 import "../css/index.css";
 
-// 引入js
 import { followElementById } from "../js/cursorFollower"; //鼠标跟踪
-followElementById("cursor-follower");
+
+function isMobile() {
+  // 使用正则表达式匹配常见的移动设备关键词
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+}
+
+if (isMobile()) {
+  // 移动端就不做鼠标跟随效果了
+} else {
+  // 引入js
+  followElementById("cursor-follower");
+}
 
 //console输出的话
 const consoleGreets = [
