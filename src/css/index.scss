@@ -112,15 +112,7 @@ html {
       flex-wrap: wrap;
       align-items: center;
       position: relative;
-      // 小屏幕适配
-      @media screen and (max-width: $small-screen) {
-        flex-direction: column;
-        .detail {
-          align-items: center;
-          text-align: center;
-        }
-      }
-
+     
       //头像
       .avatar {
         margin-right: 20px;
@@ -155,14 +147,17 @@ html {
       //名字，兴趣和联系方式
       .detail {
         padding: 5px 15px;
-        min-width: 300px;
+        // min-width: 270px;
         // height: calc($avatar-img-size - 30px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        word-break: break-word; // 强制换行，否则子元素内容过多会导致强制撑宽detail
         .name {
-          font-size: 40px;
+          font-size: 35px;
           font-weight: bold;
+          display: flex;
+          flex-wrap: wrap; /* 允许换行 */
         }
         .intro {
           font-size: 20px;
@@ -179,6 +174,18 @@ html {
           }
         }
       }
+       // 小屏幕适配,放在后面避免覆盖
+       @media screen and (max-width: $small-screen) {
+        flex-direction: column;
+        .detail {
+          align-items: center;
+          text-align: center;
+          .name{
+            justify-content: center; /* 横向居中 */
+          }
+        }
+      }
+
     }
     //展示面板
     .show {

@@ -83,15 +83,6 @@ html {
   align-items: center;
   position: relative;
 }
-@media screen and (max-width: 900px) {
-  .container .main .profile {
-    flex-direction: column;
-  }
-  .container .main .profile .detail {
-    align-items: center;
-    text-align: center;
-  }
-}
 .container .main .profile .avatar {
   margin-right: 20px;
   height: 156px;
@@ -123,14 +114,16 @@ html {
 }
 .container .main .profile .detail {
   padding: 5px 15px;
-  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  word-break: break-word;
 }
 .container .main .profile .detail .name {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
 }
 .container .main .profile .detail .intro {
   font-size: 20px;
@@ -142,6 +135,18 @@ html {
 .container .main .profile .detail .contact .mail img {
   content: url("../img/mail.svg");
   margin-right: 5px;
+}
+@media screen and (max-width: 900px) {
+  .container .main .profile {
+    flex-direction: column;
+  }
+  .container .main .profile .detail {
+    align-items: center;
+    text-align: center;
+  }
+  .container .main .profile .detail .name {
+    justify-content: center; /* 横向居中 */
+  }
 }
 .container .main .show {
   height: 100%;
